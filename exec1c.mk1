@@ -1,0 +1,25 @@
+!define BLANK ""
+C:\Work\Dev\FOSS\1ctools\exec1c.obj : C:\Work\Dev\FOSS\1ctools\exec1c.cpp .A&
+UTODEPEND
+ @C:
+ cd C:\Work\Dev\FOSS\1ctools
+ *wpp386 exec1c.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zkl -zku=1251 &
+-zq -ot -ob -ol -ol+ -oi -oa -or -oh -om -on -oe20 -fp6 -fpi87 -6r -bt=nt -f&
+o=.obj -mf -xs -xr
+
+C:\Work\Dev\FOSS\1ctools\exec1c.exe : C:\Work\Dev\FOSS\1ctools\exec1c.obj .A&
+UTODEPEND
+ @C:
+ cd C:\Work\Dev\FOSS\1ctools
+ @%write exec1c.lk1 FIL exec1c.obj
+ @%append exec1c.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b exec1c.imp 
+ @%append exec1c.lk1 LIBR exec1c.imp
+!endif
+!ifneq BLANK ""
+ @%append exec1c.lk1 
+!endif
+ *wlink name exec1c sys nt op m libf lib\cmdline.lib,lib\v8.lib op maxe=25 o&
+p q op symf @exec1c.lk1
+

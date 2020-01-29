@@ -1,0 +1,25 @@
+!define BLANK ""
+C:\Work\Dev\FOSS\1ctools\cancel1ctask.obj : C:\Work\Dev\FOSS\1ctools\cancel1&
+ctask.cpp .AUTODEPEND
+ @C:
+ cd C:\Work\Dev\FOSS\1ctools
+ *wpp386 cancel1ctask.cpp -i="C:\WATCOM/h;C:\WATCOM/h/nt" -w4 -e25 -zkl -zku&
+=1251 -zq -ot -ob -ol -ol+ -oi -oa -or -oh -om -on -oe20 -fp6 -fpi87 -6r -bt&
+=nt -fo=.obj -mf -xs -xr
+
+C:\Work\Dev\FOSS\1ctools\cancel1ctask.exe : C:\Work\Dev\FOSS\1ctools\cancel1&
+ctask.obj .AUTODEPEND
+ @C:
+ cd C:\Work\Dev\FOSS\1ctools
+ @%write cancel1ctask.lk1 FIL cancel1ctask.obj
+ @%append cancel1ctask.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b cancel1ctask.imp 
+ @%append cancel1ctask.lk1 LIBR cancel1ctask.imp
+!endif
+!ifneq BLANK ""
+ @%append cancel1ctask.lk1 
+!endif
+ *wlink name cancel1ctask sys nt op m libf lib\cmdline.lib,lib\v8.lib op max&
+e=25 op q op symf @cancel1ctask.lk1
+
