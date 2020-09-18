@@ -25,3 +25,6 @@ Usage: exec1c.exe "\<1C connection string\>" -code:"\<1C code to execute\>"|-fil
 Examples:\
 exec1c "file=C:\1C;usr=""Администратор""" -file:code.txt\
 exec1c "srvr=""server.domain.com"";ref=""Database""" -code:"ОбщийМодуль.ВыполнитьПроцедуру();" -com:V82.COMConnector\
+\
+<b>c1cc - завершение процессов 1С и очистка пользовательского кэша.</b>\
+Usage: c1cc.exe [-silent]\
