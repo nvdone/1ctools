@@ -59,9 +59,9 @@ int DeleteDirectory(wchar_t *victim)
 					retval = 1;
 			}
 		} while(FindNextFile(find, &ffd));
-	}
 
-	FindClose(find);
+		FindClose(find);
+	}
 
 	if(!RemoveDirectory(victim))
 		retval = 2;
@@ -99,9 +99,9 @@ int ClearProfileFolder(wchar_t *victim)
 				retval |= DeleteDirectory(path);
 			}
 		} while(FindNextFile(find, &ffd));
-	}
 
-	FindClose(find);
+		FindClose(find);
+	}
 
 	return retval;
 }
