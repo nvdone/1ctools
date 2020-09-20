@@ -26,7 +26,7 @@ class V8
 
 		IDispatch *piV8, *piCon;
 
-		int V8::autoWrap(int autoType, VARIANT *pvRes, IDispatch *piIDispatch, LPOLESTR name, int cArgs...);
+		int V8::autoWrap(IDispatch* piIDispatch, int autoType, LPOLESTR name, VARIANT* pvRes, int cArgs...);
 
 	public:
 
